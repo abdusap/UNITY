@@ -1,11 +1,10 @@
-// const express= require('express');
-// const { home } = require('../controller/user/homeController');
-// const { contact, contactForm } = require('../controller/user/contactController');
+const express = require("express");
+const { home } = require("../controller/technology");
+const { contact } = require("../controller/technology/contact");
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get('/',home)
-// router.route('/contact').get(contact).post(contactForm)
+router.get("/", home);
+router.get("/contact", contact);
 
-
-// module.exports=router
+module.exports = router;
