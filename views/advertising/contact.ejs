@@ -25,7 +25,7 @@
 <%- include('./partials/header.ejs') %>
 
 
-<section class="page-title" style="background-image: url(/images/background/page-title.jpg);">
+<section class="page-title1" style="background-image: url(/images/background/page-title.jpg);">
     <div class="auto-container">
     <div class="title-outer">
     <h1 class="title">Contact Us</h1>
@@ -47,7 +47,7 @@
     <h2>Feel free to write</h2>
     </div>
     
-    <form id="contact_form" name="contact_form" class action="https://html.kodesolution.com/2024/sotech-html/includes/sendmail.php" method="post">
+    <form id="contact_form" name="contact_form" class method="post">
     <div class="row">
     <div class="col-sm-6">
     <div class="mb-3">
@@ -152,7 +152,50 @@
 <script src="/js/swiper.min.js"></script>
 <script src="/js/owl.js"></script>
 <script src="/js/script.js"></script>
+<!-- <script>
+    	//Contact Form Validation
+	if($('#contact_form').length){
+		$('#submit').click(function(){
+			
+            var o = new Object();
+            var form = '#email-form';
+			var username = $('#email-form .username').val();
+			var email = $('#email-form .email').val();
+      			if(username == '' || email == '')
+			{
+				$('#email-form .response').html('<div class="failed">Please fill the required fields.</div>');
+				return false;
+			}
+
+        // Email validation using a regular expression
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailPattern.test(email)) {
+            $('#email-form .response').html('<div class="failed">Invalid email format.</div>');
+            return false;
+        }
+            
+            $.ajax({
+                url:"/contact",
+                method:"POST",
+                data: $(form).serialize(),
+                beforeSend:function(){
+                    $('#email-form .response').html('<div class="text-info"><img style="height:33px" src="/Public/user/images/icons/loader.gif"> Loading...</div>');
+                },
+                success:function(data){
+                    $('form').trigger("reset");
+                    $('#email-form .response').fadeIn().html(data.message).css('color', 'green')
+                    setTimeout(function(){
+                        $('#email-form .response').fadeOut("slow");
+                    }, 5000);
+                },
+                error: function(jqXHR) {
+                  $('#email-form .response').fadeIn().html(jqXHR.responseJSON.message).css('color', 'red')
+                }
+                
+            });
+        });
+	}
+</script> -->
 </body>
 
-<!-- Mirrored from html.kodesolution.com/2024/sotech-html/index-4-red.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 11:05:21 GMT -->
 </html>

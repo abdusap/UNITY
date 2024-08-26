@@ -7,15 +7,15 @@
     <div class="top-left">
     
     <ul class="list-style-one">
-    <li><i class="fa fa-envelope"></i> <a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#432d2626272b262f3303202c2e33222d3a6d202c2e"><span class="__cf_email__" data-cfemail="cfa1aaaaaba7aaa3bf8faca0a2bfaea1b6e1aca0a2">[email&#160;protected]</span></a></li>
-    <li><i class="fa fa-map-marker-alt"></i> 88 Broklyn Golden Street. New York</li>
+    <li><i class="fa fa-envelope"></i> <a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#432d2626272b262f3303202c2e33222d3a6d202c2e"><span class="__cf_email__" data-cfemail="cfa1aaaaaba7aaa3bf8faca0a2bfaea1b6e1aca0a2">test@gmail.com</span></a></li>
+    <li><i class="fa fa-map-marker-alt"></i> Unity, Dubai Business Bay, Dubai, UAE</li>
     </ul>
     </div>
     <div class="top-right">
     <ul class="useful-links">
-    <li><a href="#">Help</a></li>
-    <li><a href="#">Support</a></li>
+    <!-- <li><a href="#">Help</a></li> -->
     <li><a href="/advertising/contact">Contact</a></li>
+    <li><a href="/advertising/about">About Us</a></li>
     </ul>
     </div>
     </div>
@@ -38,14 +38,14 @@
     
     <div class="main-box">
     <div class="logo-box">
-    <div class="logo"><a href="index.html"><img src="images/logo-red.png" alt title="Sotech"></a></div>
+    <div class="logo"><a href="index.html"><img src="/images/logo-red.png" alt title="Sotech"></a></div>
     </div>
     
     <div class="nav-outer">
     <nav class="nav main-menu">
     <ul class="navigation">
-    <li class="current dropdown"><a href="index.html">Home</a>
-    <ul>
+    <li class=" "><a href="/advertising">Home</a>
+    <!-- <ul>
     <li class="dropdown"><a href="index.html">Blue Layouts <span class="badge-menu">Blue</span></a>
     <ul>
     <li><a href="index.html">Home Layout 1</a></li>
@@ -95,9 +95,9 @@
     </ul>
     </li>
     <li><a href="intro.html">Intro</a></li>
-    </ul>
+    </ul> -->
     </li>
-    <li class="dropdown"><a href="#">Pages</a>
+    <!-- <li class="dropdown"><a href="#">Pages</a>
     <ul>
     <li><a href="page-about.html">About</a></li>
     <li class="dropdown"><a href="#">Projects</a>
@@ -118,14 +118,14 @@
     <li><a href="page-faq.html">FAQ</a></li>
     <li><a href="page-404.html">Page 404</a></li>
     </ul>
-    </li>
-    <li class="dropdown"><a href="#">Services</a>
+    </li> -->
+    <!-- <li class="dropdown"><a href="#">Services</a>
     <ul>
     <li><a href="page-services.html">Services List</a></li>
     <li><a href="page-service-details.html">Service Details</a></li>
     </ul>
-    </li>
-    <li class="dropdown"><a href="#">Shop</a>
+    </li> -->
+    <!-- <li class="dropdown"><a href="#">Shop</a>
     <ul>
     <li><a href="shop-products.html">Products</a></li>
     <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
@@ -133,22 +133,23 @@
     <li><a href="shop-cart.html">Cart</a></li>
     <li><a href="shop-checkout.html">Checkout</a></li>
     </ul>
-    </li>
-    <li class="dropdown"><a href="#">News</a>
+    </li> -->
+    <!-- <li class="dropdown"><a href="#">News</a>
     <ul>
     <li><a href="news-grid.html">News Grid</a></li>
     <li><a href="news-details.html">News Details</a></li>
     </ul>
-    </li>
+    </li> -->
     <li><a href="/advertising/contact">Contact</a></li>
+    <li><a href="/advertising/about">About Us</a></li>
     </ul>
     </nav>
     
-    <div class="outer-box">
+    <!-- <div class="outer-box">
     <a href="page-contact.html" class="theme-btn btn-style-one"><span class="btn-title">BOOK A CONSULTATION</span></a>
     
     <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-    </div>
+    </div> -->
     </div>
     </div>
     </div>
@@ -161,7 +162,7 @@
     
     <nav class="menu-box">
     <div class="upper-box">
-    <div class="nav-logo"><a href="index.html"><img src="images/logo-red.png" alt title></a></div>
+    <div class="nav-logo"><a href="index.html"><img src="/images/logo-red.png" alt title></a></div>
     <div class="close-btn"><i class="icon fa fa-times"></i></div>
     </div>
     <ul class="navigation clearfix">
@@ -221,7 +222,7 @@
     <div class="inner-container">
     
     <div class="logo">
-    <a href="index.html" title><img src="images/logo-2-red.png" alt title></a>
+    <a href="index.html" title><img src="/images/logo-2-red.png" alt title></a>
     </div>
     
     <div class="nav-outer">
@@ -240,3 +241,22 @@
     </div>
     </div>
     </header>
+
+    <script>
+// Get the current URL path (e.g., '/advertising', '/advertising/contact')
+const currentPath = window.location.pathname;
+
+// Select all navigation list items
+const navItems = document.querySelectorAll('.navigation li');
+
+// Loop through each list item
+navItems.forEach(item => {
+    // Get the anchor tag inside the list item
+    const link = item.querySelector('a');
+
+    // If the link's href matches the current path, add the 'current' class
+    if (link && link.getAttribute('href') === currentPath) {
+        item.classList.add('current');
+    }
+});
+    </script>
