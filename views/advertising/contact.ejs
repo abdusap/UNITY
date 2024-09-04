@@ -17,185 +17,311 @@
 <!--[if lt IE 9]><script src="public/js/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="public/js/respond.js"></script><![endif]-->
 </head>
-<body>
-<div class="page-wrapper">
+  <body>
+    <div class="page-wrapper">
+      <div class="preloader"></div>
 
-<div class="preloader"></div>
+      <%- include('./partials/header.ejs') %>
 
-<%- include('./partials/header.ejs') %>
+      <section
+        class="page-title1"
+        style="background-image: url(/images/background/page-title.jpg)"
+      >
+        <div class="auto-container">
+          <div class="title-outer">
+            <h1 class="title">Contact Us</h1>
+            <ul class="page-breadcrumb">
+              <li><a href="index.html">Home</a></li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
+      <section class="contact-details">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-7 col-lg-6">
+              <div class="sec-title">
+                <span class="sub-title">Send us email</span>
+                <h2>Feel free to write</h2>
+              </div>
 
-<section class="page-title1" style="background-image: url(/images/background/page-title.jpg);">
-    <div class="auto-container">
-    <div class="title-outer">
-    <h1 class="title">Contact Us</h1>
-    <ul class="page-breadcrumb">
-    <li><a href="index.html">Home</a></li>
-    <li>Contact</li>
-    </ul>
+              <form id="contact_form_advertising" name="contact_form" method="post">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <input name="form_name" class="form-control" type="text" placeholder="Enter Name">
+                      <div class="error-message" style="color:red"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                      <div class="error-message" style="color:red"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                      <div class="error-message" style="color:red"></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                      <div class="error-message" style="color:red"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <textarea name="form_message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                  <div class="error-message" style="color:red"></div>
+                </div>
+                <div class="mb-3">
+                  <input name="form_botcheck" class="form-control" type="hidden" value>
+                  <button type="submit" id="submit" class="theme-btn btn-style-one" data-loading-text="Please wait...">
+                    <span class="btn-title">Send message</span>
+                  </button>
+                  <button type="reset" class="theme-btn btn-style-one">
+                    <span class="btn-title">Reset</span>
+                  </button>
+                </div>
+              </form>
+              
+            </div>
+            <div class="col-xl-5 col-lg-6">
+              <div class="contact-details__right">
+                <div class="sec-title">
+                  <span class="sub-title">Need any help?</span>
+                  <h2>Get in touch with us</h2>
+                  <div class="text">
+                    Lorem ipsum is simply free text available dolor sit amet,
+                    consectetur notted adipisicing elit sed do eiusmod tempor
+                    incididunt simply free ut labore et dolore magna aliqua.
+                  </div>
+                </div>
+                <ul class="list-unstyled contact-details__info">
+                  <li>
+                    <div class="icon">
+                      <span class="lnr-icon-phone-plus"></span>
+                    </div>
+                    <div class="text">
+                      <h6>Have any question?</h6>
+                      <a href="tel:980089850"
+                        ><span>Free</span> +92 (020)-9850</a
+                      >
+                    </div>
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <span class="lnr-icon-envelope1"></span>
+                    </div>
+                    <div class="text">
+                      <h6>Write email</h6>
+                      <a
+                        href="https://html.kodesolution.com/cdn-cgi/l/email-protection#87e9e2e2e3efe2ebf7c7e4e8eaf7e6e9fea9e4e8ea"
+                        ><span
+                          class="__cf_email__"
+                          data-cfemail="8de3e8e8e9e5e8e1fdcdeee2e0fdece3f4a3eee2e0"
+                          >[email&#160;protected]</span
+                        ></a
+                      >
+                    </div>
+                  </li>
+                  <li>
+                    <div class="icon">
+                      <span class="lnr-icon-location"></span>
+                    </div>
+                    <div class="text">
+                      <h6>Visit anytime</h6>
+                      <span>66 broklyn golden street. New York</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container-fluid p-0">
+          <div class="row">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd"
+              data-tm-width="100%"
+              height="500"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <%- include('./partials/footer.ejs') %>
     </div>
+
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="fa fa-angle-up"></span>
     </div>
-    </section>
+    <script
+      data-cfasync="false"
+      src="/../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.fancybox.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/wow.js"></script>
+    <script src="/js/appear.js"></script>
+    <script src="/js/select2.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
+    <script src="/js/owl.js"></script>
+    <script src="/js/script.js"></script>
+
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.form.min.js"></script>
+    <script>
+        document.getElementById("contact_form_advertising").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
     
-    
-    <section class="contact-details">
-    <div class="container ">
-    <div class="row">
-    <div class="col-xl-7 col-lg-6">
-    <div class="sec-title">
-    <span class="sub-title">Send us email</span>
-    <h2>Feel free to write</h2>
-    </div>
-    
-    <form id="contact_form" name="contact_form" class method="post">
-    <div class="row">
-    <div class="col-sm-6">
-    <div class="mb-3">
-    <input name="form_name" class="form-control" type="text" placeholder="Enter Name">
-    </div>
-    </div>
-    <div class="col-sm-6">
-    <div class="mb-3">
-    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
-    </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col-sm-6">
-    <div class="mb-3">
-    <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
-    </div>
-    </div>
-    <div class="col-sm-6">
-    <div class="mb-3">
-    <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
-    </div>
-    </div>
-    </div>
-    <div class="mb-3">
-    <textarea name="form_message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
-    </div>
-    <div class="mb-3">
-    <input name="form_botcheck" class="form-control" type="hidden" value />
-    <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
-    <button type="reset" class="theme-btn btn-style-one"><span class="btn-title">Reset</span></button>
-    </div>
-    </form>
-    
-    </div>
-    <div class="col-xl-5 col-lg-6">
-    <div class="contact-details__right">
-    <div class="sec-title">
-    <span class="sub-title">Need any help?</span>
-    <h2>Get in touch with us</h2>
-    <div class="text">Lorem ipsum is simply free text available dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt simply free ut labore et dolore magna aliqua.</div>
-    </div>
-    <ul class="list-unstyled contact-details__info">
-    <li>
-    <div class="icon">
-    <span class="lnr-icon-phone-plus"></span>
-    </div>
-    <div class="text">
-    <h6>Have any question?</h6>
-    <a href="tel:980089850"><span>Free</span> +92 (020)-9850</a>
-    </div>
-    </li>
-    <li>
-    <div class="icon">
-    <span class="lnr-icon-envelope1"></span>
-    </div>
-    <div class="text">
-    <h6>Write email</h6>
-    <a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#87e9e2e2e3efe2ebf7c7e4e8eaf7e6e9fea9e4e8ea"><span class="__cf_email__" data-cfemail="8de3e8e8e9e5e8e1fdcdeee2e0fdece3f4a3eee2e0">[email&#160;protected]</span></a>
-    </div>
-    </li>
-    <li>
-    <div class="icon">
-    <span class="lnr-icon-location"></span>
-    </div>
-    <div class="text">
-    <h6>Visit anytime</h6>
-    <span>66 broklyn golden street. New York</span>
-    </div>
-    </li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    
-    
-    <section>
-    <div class="container-fluid p-0">
-    <div class="row">
-    
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd" data-tm-width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-    </div>
-    </div>
-    </section>
-
-    <%- include('./partials/footer.ejs') %>
-
-</div>
-
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-<!-- <script data-cfasync="false" src="/../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
-<script src="/js/jquery.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.fancybox.js"></script>
-<script src="/js/jquery-ui.js"></script>
-<script src="/js/wow.js"></script>
-<script src="/js/appear.js"></script>
-<script src="/js/select2.min.js"></script>
-<script src="/js/swiper.min.js"></script>
-<script src="/js/owl.js"></script>
-<script src="/js/script.js"></script>
-<!-- <script>
-    	//Contact Form Validation
-	if($('#contact_form').length){
-		$('#submit').click(function(){
-			
-            var o = new Object();
-            var form = '#email-form';
-			var username = $('#email-form .username').val();
-			var email = $('#email-form .email').val();
-      			if(username == '' || email == '')
-			{
-				$('#email-form .response').html('<div class="failed">Please fill the required fields.</div>');
-				return false;
-			}
-
-        // Email validation using a regular expression
-        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (!emailPattern.test(email)) {
-            $('#email-form .response').html('<div class="failed">Invalid email format.</div>');
-            return false;
-        }
-            
-            $.ajax({
-                url:"/contact",
-                method:"POST",
-                data: $(form).serialize(),
-                beforeSend:function(){
-                    $('#email-form .response').html('<div class="text-info"><img style="height:33px" src="/Public/user/images/icons/loader.gif"> Loading...</div>');
-                },
-                success:function(data){
-                    $('form').trigger("reset");
-                    $('#email-form .response').fadeIn().html(data.message).css('color', 'green')
-                    setTimeout(function(){
-                        $('#email-form .response').fadeOut("slow");
-                    }, 5000);
-                },
-                error: function(jqXHR) {
-                  $('#email-form .response').fadeIn().html(jqXHR.responseJSON.message).css('color', 'red')
-                }
-                
+            // Clear previous error messages
+            document.querySelectorAll('.error-message').forEach(function(el) {
+                el.textContent = '';
             });
-        });
-	}
-</script> -->
-</body>
+    
+            let isValid = true;
+    
+            // Get form values
+            const name = document.querySelector('input[name="form_name"]').value.trim();
+            const email = document.querySelector('input[name="form_email"]').value.trim();
+            const phone = document.querySelector('input[name="form_phone"]').value.trim();
+            const subject = document.querySelector('input[name="form_subject"]').value.trim();
+            const message = document.querySelector('textarea[name="form_message"]').value.trim();
+    
+            // Validate the form fields
+            if (!name) {
+                showError('input[name="form_name"]', 'Name is required.');
+                isValid = false;
+            }
+    
+            if (!email) {
+                showError('input[name="form_email"]', 'Email is required.');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('input[name="form_email"]', 'Please enter a valid email address.');
+                isValid = false;
+            }
 
+            if (!validatePhone(phone)) {
+                showError('input[name="form_phone"]', 'Please enter a valid phone number.');
+                isValid = false;
+            } 
+    
+            if (!subject) {
+                showError('input[name="form_subject"]', 'Subject is required.');
+                isValid = false;
+            }
+    
+            if (!message) {
+                showError('textarea[name="form_message"]', 'Message is required.');
+                isValid = false;
+            }
+    
+            // If form is valid, submit the data
+            if (isValid) {
+                const formData = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    subject: subject,
+                    message: message,
+                };
+    
+                fetch("/advertising/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status) {
+                        alert("Your message has been sent successfully.");
+                        document.getElementById("contact_form_advertising").reset(); // Reset the form
+                    } else {
+                        alert("There was an error sending your message. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("There was an error sending your message. Please try again.");
+                });
+            }
+        });
+    
+        function showError(selector, message) {
+            const inputElement = document.querySelector(selector);
+            const errorElement = inputElement.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.textContent = message;
+            }
+            // Add event listener to clear the error message on input change
+            inputElement.addEventListener('input', function() {
+                errorElement.textContent = '';
+            });
+        }
+    
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validatePhone(phone) {
+    if (!phone) {
+        return true; // Phone is optional, so return true if it's empty
+    }
+
+    const re = /^[0-9]{9,12}$/; // Regex pattern for 9 to 12 digits
+    return re.test(String(phone));
+}
+    </script>
+    
+    <!-- <script>
+      (function ($) {
+        $("#contact_form").validate({
+          submitHandler: function (form) {
+            var form_btn = $(form).find('button[type="submit"]');
+            var form_result_div = "#form-result";
+            $(form_result_div).remove();
+            form_btn.before(
+              '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
+            );
+            var form_btn_old_msg = form_btn.html();
+            form_btn.html(form_btn.prop("disabled", true).data("loading-text"));
+            $(form).ajaxSubmit({
+              dataType: "json",
+              success: function (data) {
+                if (data.status == "true") {
+                  $(form).find(".form-control").val("");
+                }
+                form_btn.prop("disabled", false).html(form_btn_old_msg);
+                $(form_result_div).html(data.message).fadeIn("slow");
+                setTimeout(function () {
+                  $(form_result_div).fadeOut("slow");
+                }, 6000);
+              },
+            });
+          },
+        });
+      })(jQuery);
+    </script> -->
+  </body>
+
+  <!-- Mirrored from html.kodesolution.com/2024/sotech-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 10:48:14 GMT -->
 </html>
