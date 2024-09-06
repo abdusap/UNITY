@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { contactFormAdvertisingTemplate } = require('../../utilities/emailTemplate');
 
 const contact= async (req, res,next) => {
     try{
@@ -23,49 +24,20 @@ const contactForm= async (req, res,next) => {
     port: 587,                         // SMTP port
     secure: false,                     // Use TLS
     auth: {
-      user: "61e07d001@smtp-brevo.com",            // SMTP username
+      // user: "sapabdu@gmail.com",            // SMTP username
+       user: "61e07d001@smtp-brevo.com",            // SMTP username
       pass: "185wGm0rfDNzOxCh"             // SMTP password or API key
     }
   });
   
+  const html = contactFormAdvertisingTemplate(name, email, phone, subject, message)
   // Create email data
   const mailOptions = {
-    from: "sapabdu@gmail.com", // Sender email address
+    from: email, // Sender email address
     to:   "saepabdu@gmail.com", // Recipient email address
     subject: 'Contact Form submission', // Email subject
     // text: 'This is a test email sent from Node.js using SendinBlue SMTP.'
-    html:`<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:800px" class="responsive-table">
-    <tbody>
-        <tr>
-            <td>
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td align="center" style="font-size:24px;color:#0e0e0f;font-weight:700;font-family:Helvetica Neue;line-height:28px;vertical-align:top;text-align:center;padding:35px 40px 0px 40px">
-                            <strong>AutoHoms</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="content" style="font:16px/22px 'Helvetica Neue',Arial,'sans-serif';text-align:left;color:#555555;padding:40px 40px 0 40px">
-                            <p style="font-size:16px">
-                                Name : ${name}
-                            </p>
-                            <p style="font-size:16px">
-                              Email : ${email}
-                            </p>
-                            <p style="font-size:16px">
-                              Message : ${message}
-                            </p>
-                        </td>
-                    </tr>
-            
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td width="100%" align="center" valign="top" bgcolor="#ffffff" height="45"></td>
-        </tr>
-    </tbody>
-  </table>`
+    html: html
   };
   
   // Send the email

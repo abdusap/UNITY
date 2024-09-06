@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Sotech | IT Solutions & Technology HTML Template | Home Page 04
+    </title>
 
-<!-- Mirrored from html.kodesolution.com/2024/sotech-html/index-4-red.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 11:05:21 GMT -->
-<head>
-<meta charset="utf-8">
-<title>Sotech | IT Solutions & Technology HTML Template | Home Page 04</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/style-color-red.css" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="/images/favicon-red.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/images/favicon-red.png" type="image/x-icon" />
 
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/style.css" rel="stylesheet">
-<link href="/css/style-color-red.css" rel="stylesheet">
-<link rel="shortcut icon" href="/images/favicon-red.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon-red.png" type="image/x-icon">
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="public/js/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="public/js/respond.js"></script><![endif]-->
-</head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+  </head>
   <body>
     <div class="page-wrapper">
       <div class="preloader"></div>
@@ -47,42 +52,81 @@
                 <h2>Feel free to write</h2>
               </div>
 
-              <form id="contact_form_advertising" name="contact_form" method="post">
+              <form
+                id="contact_form_advertising"
+                name="contact_form"
+                method="post"
+              >
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-3">
-                      <input name="form_name" class="form-control" type="text" placeholder="Enter Name">
-                      <div class="error-message" style="color:red"></div>
+                      <input
+                        name="form_name"
+                        class="form-control"
+                        type="text"
+                        placeholder="Enter Name"
+                      />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="mb-3">
-                      <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
-                      <div class="error-message" style="color:red"></div>
+                      <input
+                        name="form_email"
+                        class="form-control required email"
+                        type="email"
+                        placeholder="Enter Email"
+                      />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-3">
-                      <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
-                      <div class="error-message" style="color:red"></div>
+                      <input
+                        name="form_subject"
+                        class="form-control required"
+                        type="text"
+                        placeholder="Enter Subject"
+                      />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="mb-3">
-                      <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
-                      <div class="error-message" style="color:red"></div>
+                      <input
+                        name="form_phone"
+                        class="form-control"
+                        type="text"
+                        placeholder="Enter Phone"
+                      />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                 </div>
                 <div class="mb-3">
-                  <textarea name="form_message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
-                  <div class="error-message" style="color:red"></div>
+                  <textarea
+                    name="form_message"
+                    class="form-control required"
+                    rows="7"
+                    placeholder="Enter Message"
+                  ></textarea>
+                  <div class="error-message" style="color: red"></div>
                 </div>
                 <div class="mb-3">
-                  <input name="form_botcheck" class="form-control" type="hidden" value>
-                  <button type="submit" id="submit" class="theme-btn btn-style-one" data-loading-text="Please wait...">
+                  <input
+                    name="form_botcheck"
+                    class="form-control"
+                    type="hidden"
+                    value
+                  />
+                  <!-- <div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div> -->
+                  <button
+                    type="submit"
+                    id="submit"
+                    class="theme-btn btn-style-one"
+                  >
                     <span class="btn-title">Send message</span>
                   </button>
                   <button type="reset" class="theme-btn btn-style-one">
@@ -90,7 +134,6 @@
                   </button>
                 </div>
               </form>
-              
             </div>
             <div class="col-xl-5 col-lg-6">
               <div class="contact-details__right">
@@ -186,142 +229,164 @@
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.form.min.js"></script>
     <script>
-        document.getElementById("contact_form_advertising").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-    
-            // Clear previous error messages
-            document.querySelectorAll('.error-message').forEach(function(el) {
-                el.textContent = '';
-            });
-    
-            let isValid = true;
-    
-            // Get form values
-            const name = document.querySelector('input[name="form_name"]').value.trim();
-            const email = document.querySelector('input[name="form_email"]').value.trim();
-            const phone = document.querySelector('input[name="form_phone"]').value.trim();
-            const subject = document.querySelector('input[name="form_subject"]').value.trim();
-            const message = document.querySelector('textarea[name="form_message"]').value.trim();
-    
-            // Validate the form fields
-            if (!name) {
-                showError('input[name="form_name"]', 'Name is required.');
-                isValid = false;
-            }
-    
-            if (!email) {
-                showError('input[name="form_email"]', 'Email is required.');
-                isValid = false;
-            } else if (!validateEmail(email)) {
-                showError('input[name="form_email"]', 'Please enter a valid email address.');
-                isValid = false;
-            }
+      document
+        .getElementById("contact_form_advertising")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
 
-            if (!validatePhone(phone)) {
-                showError('input[name="form_phone"]', 'Please enter a valid phone number.');
-                isValid = false;
-            } 
-    
-            if (!subject) {
-                showError('input[name="form_subject"]', 'Subject is required.');
-                isValid = false;
-            }
-    
-            if (!message) {
-                showError('textarea[name="form_message"]', 'Message is required.');
-                isValid = false;
-            }
-    
-            // If form is valid, submit the data
-            if (isValid) {
-                const formData = {
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    subject: subject,
-                    message: message,
-                };
-    
-                fetch("/advertising/contact", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formData),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status) {
-                        alert("Your message has been sent successfully.");
-                        document.getElementById("contact_form_advertising").reset(); // Reset the form
-                    } else {
-                        alert("There was an error sending your message. Please try again.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("There was an error sending your message. Please try again.");
-                });
-            }
-        });
-    
-        function showError(selector, message) {
-            const inputElement = document.querySelector(selector);
-            const errorElement = inputElement.nextElementSibling;
-            if (errorElement && errorElement.classList.contains('error-message')) {
-                errorElement.textContent = message;
-            }
-            // Add event listener to clear the error message on input change
-            inputElement.addEventListener('input', function() {
-                errorElement.textContent = '';
-            });
-        }
-    
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(String(email).toLowerCase());
-        }
+          // Clear previous error messages
+          document.querySelectorAll(".error-message").forEach(function (el) {
+            el.textContent = "";
+          });
 
-        function validatePhone(phone) {
-    if (!phone) {
-        return true; // Phone is optional, so return true if it's empty
-    }
+          //for showing contact form message
+          let form_btn = $("#contact_form_advertising").find(
+            'button[type="submit"]'
+          );
+          let form_result_div = "#form-result";
+          $(form_result_div).remove();
+          form_btn.before(
+            '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
+          );
+          let form_btn_old_msg = form_btn.html();
+          // form_btn.html(form_btn.prop("disabled", true).data("loading-text"));
 
-    const re = /^[0-9]{9,12}$/; // Regex pattern for 9 to 12 digits
-    return re.test(String(phone));
-}
-    </script>
-    
-    <!-- <script>
-      (function ($) {
-        $("#contact_form").validate({
-          submitHandler: function (form) {
-            var form_btn = $(form).find('button[type="submit"]');
-            var form_result_div = "#form-result";
-            $(form_result_div).remove();
-            form_btn.before(
-              '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
+          form_btn.prop("disabled", true).html("Please wait...");
+
+          let isValid = true;
+
+          // Get form values
+          const name = document
+            .querySelector('input[name="form_name"]')
+            .value.trim();
+          const email = document
+            .querySelector('input[name="form_email"]')
+            .value.trim();
+          const phone = document
+            .querySelector('input[name="form_phone"]')
+            .value.trim();
+          const subject = document
+            .querySelector('input[name="form_subject"]')
+            .value.trim();
+          const message = document
+            .querySelector('textarea[name="form_message"]')
+            .value.trim();
+
+          // Validate the form fields
+          if (!name) {
+            showError('input[name="form_name"]', "Name is required.");
+            isValid = false;
+          }
+
+          if (!email) {
+            showError('input[name="form_email"]', "Email is required.");
+            isValid = false;
+          } else if (!validateEmail(email)) {
+            showError(
+              'input[name="form_email"]',
+              "Please enter a valid email address."
             );
-            var form_btn_old_msg = form_btn.html();
-            form_btn.html(form_btn.prop("disabled", true).data("loading-text"));
-            $(form).ajaxSubmit({
-              dataType: "json",
-              success: function (data) {
-                if (data.status == "true") {
-                  $(form).find(".form-control").val("");
+            isValid = false;
+          }
+
+          if (!validatePhone(phone)) {
+            showError(
+              'input[name="form_phone"]',
+              "Please enter a valid phone number."
+            );
+            isValid = false;
+          }
+
+          if (!subject) {
+            showError('input[name="form_subject"]', "Subject is required.");
+            isValid = false;
+          }
+
+          if (!message) {
+            showError('textarea[name="form_message"]', "Message is required.");
+            isValid = false;
+          }
+
+          // If form is valid, submit the data
+          if (isValid) {
+            const formData = {
+              name: name,
+              email: email,
+              phone: phone,
+              subject: subject,
+              message: message,
+            };
+
+            fetch("/advertising/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.status) {
+                  document.getElementById("contact_form_advertising").reset(); // Reset the form
+                  form_btn.prop("disabled", false).html(form_btn_old_msg);
+                  $(form_result_div).html(data.message).fadeIn("slow");
+                  setTimeout(function () {
+                    $(form_result_div).fadeOut("slow");
+                  }, 5000);
+                } else {
+                  document.getElementById("contact_form_advertising").reset(); // Reset the form
+                  form_btn.prop("disabled", false).html(form_btn_old_msg);
+                  $(form_result_div)
+                    .html(`<span style="color: red;">${data.message}</span>`)
+                    .fadeIn("slow");
+                  setTimeout(function () {
+                    $(form_result_div).fadeOut("slow");
+                  }, 5000);
                 }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                document.getElementById("contact_form_advertising").reset(); // Reset the form
                 form_btn.prop("disabled", false).html(form_btn_old_msg);
-                $(form_result_div).html(data.message).fadeIn("slow");
+                $(form_result_div)
+                  .html(
+                    `<span style="color: red;">There was an error sending your message. Please try again.</span>`
+                  )
+                  .fadeIn("slow");
                 setTimeout(function () {
                   $(form_result_div).fadeOut("slow");
-                }, 6000);
-              },
-            });
-          },
+                }, 5000);
+              });
+          } else {
+            form_btn.prop("disabled", false).html("Send Message");
+          }
         });
-      })(jQuery);
-    </script> -->
-  </body>
 
-  <!-- Mirrored from html.kodesolution.com/2024/sotech-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Jun 2024 10:48:14 GMT -->
+      function showError(selector, message) {
+        const inputElement = document.querySelector(selector);
+        const errorElement = inputElement.nextElementSibling;
+        if (errorElement && errorElement.classList.contains("error-message")) {
+          errorElement.textContent = message;
+        }
+        // Add event listener to clear the error message on input change
+        inputElement.addEventListener("input", function () {
+          errorElement.textContent = "";
+        });
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function validatePhone(phone) {
+        if (!phone) {
+          return true; // Phone is optional, so return true if it's empty
+        }
+
+        const re = /^[0-9]{9,12}$/; // Regex pattern for 9 to 12 digits
+        return re.test(String(phone));
+      }
+    </script>
+  </body>
 </html>
