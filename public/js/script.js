@@ -38,6 +38,9 @@ var THEMEMASCOT = {};
     if ($(".preloader-advertising").length) {
       $(".preloader-advertising").delay(200).fadeOut(500);
     }
+    if ($(".preloader-technology").length) {
+      $(".preloader-technology").delay(200).fadeOut(500);
+    }
   }
   function headerStyle() {
     if ($(".main-header").length) {
