@@ -677,6 +677,49 @@ li {
     transition: none
 }
 
+.preloader-technology {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #fff
+}
+
+.preloader-technology:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 200px;
+    width: 200px;
+    margin-left: -70px;
+    margin-top: -80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/unity-technology-logo.png);
+    background-size: 200px;
+    content: ""
+}
+
+.preloader-technology:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: var(--theme-color1);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-transition: none;
+    transition: none
+}
+
 .preloader-advertising {
     position: fixed;
     left: 0;
@@ -1926,7 +1969,15 @@ li {
     width: 180px
 }
 
+ .head-logo-technology {
+    width: 230px
+}
+
  .nav-logo {
+    width: 180px
+}
+
+ .footer-logo-technology {
     width: 180px
 }
 
@@ -3102,7 +3153,13 @@ li {
 }
 
 .sticky-header .logo img {
-    max-height: 70px
+    /* max-height: 70px */
+    max-width: 110px;
+}
+
+.sticky-logo {
+    /* max-height: 70px */
+    max-width: 155px!important;
 }
 
 .sticky-header .nav-outer {
