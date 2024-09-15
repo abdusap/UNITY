@@ -51,10 +51,8 @@
               </div>
 
               <form
-                id="contact_form"
+                id="contact_form_advertising"
                 name="contact_form"
-                class
-                action="https://html.kodesolution.com/2024/sotech-html/includes/sendmail.php"
                 method="post"
               >
                 <div class="row">
@@ -66,6 +64,7 @@
                         type="text"
                         placeholder="Enter Name"
                       />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -76,6 +75,7 @@
                         type="email"
                         placeholder="Enter Email"
                       />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                 </div>
@@ -88,6 +88,7 @@
                         type="text"
                         placeholder="Enter Subject"
                       />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -98,6 +99,7 @@
                         type="text"
                         placeholder="Enter Phone"
                       />
+                      <div class="error-message" style="color: red"></div>
                     </div>
                   </div>
                 </div>
@@ -108,6 +110,7 @@
                     rows="7"
                     placeholder="Enter Message"
                   ></textarea>
+                  <div class="error-message" style="color: red"></div>
                 </div>
                 <div class="mb-3">
                   <input
@@ -116,10 +119,11 @@
                     type="hidden"
                     value
                   />
+                  <!-- <div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div> -->
                   <button
                     type="submit"
+                    id="submit"
                     class="theme-btn btn-style-one"
-                    data-loading-text="Please wait..."
                   >
                     <span class="btn-title">Send message</span>
                   </button>
@@ -223,33 +227,164 @@
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.form.min.js"></script>
     <script>
-      (function ($) {
-        $("#contact_form").validate({
-          submitHandler: function (form) {
-            var form_btn = $(form).find('button[type="submit"]');
-            var form_result_div = "#form-result";
-            $(form_result_div).remove();
-            form_btn.before(
-              '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
+      document
+        .getElementById("contact_form_advertising")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Clear previous error messages
+          document.querySelectorAll(".error-message").forEach(function (el) {
+            el.textContent = "";
+          });
+
+          //for showing contact form message
+          let form_btn = $("#contact_form_advertising").find(
+            'button[type="submit"]'
+          );
+          let form_result_div = "#form-result";
+          $(form_result_div).remove();
+          form_btn.before(
+            '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
+          );
+          let form_btn_old_msg = form_btn.html();
+          // form_btn.html(form_btn.prop("disabled", true).data("loading-text"));
+
+          form_btn.prop("disabled", true).html("Please wait...");
+
+          let isValid = true;
+
+          // Get form values
+          const name = document
+            .querySelector('input[name="form_name"]')
+            .value.trim();
+          const email = document
+            .querySelector('input[name="form_email"]')
+            .value.trim();
+          const phone = document
+            .querySelector('input[name="form_phone"]')
+            .value.trim();
+          const subject = document
+            .querySelector('input[name="form_subject"]')
+            .value.trim();
+          const message = document
+            .querySelector('textarea[name="form_message"]')
+            .value.trim();
+
+          // Validate the form fields
+          if (!name) {
+            showError('input[name="form_name"]', "Name is required.");
+            isValid = false;
+          }
+
+          if (!email) {
+            showError('input[name="form_email"]', "Email is required.");
+            isValid = false;
+          } else if (!validateEmail(email)) {
+            showError(
+              'input[name="form_email"]',
+              "Please enter a valid email address."
             );
-            var form_btn_old_msg = form_btn.html();
-            form_btn.html(form_btn.prop("disabled", true).data("loading-text"));
-            $(form).ajaxSubmit({
-              dataType: "json",
-              success: function (data) {
-                if (data.status == "true") {
-                  $(form).find(".form-control").val("");
+            isValid = false;
+          }
+
+          if (!validatePhone(phone)) {
+            showError(
+              'input[name="form_phone"]',
+              "Please enter a valid phone number."
+            );
+            isValid = false;
+          }
+
+          if (!subject) {
+            showError('input[name="form_subject"]', "Subject is required.");
+            isValid = false;
+          }
+
+          if (!message) {
+            showError('textarea[name="form_message"]', "Message is required.");
+            isValid = false;
+          }
+
+          // If form is valid, submit the data
+          if (isValid) {
+            const formData = {
+              name: name,
+              email: email,
+              phone: phone,
+              subject: subject,
+              message: message,
+            };
+
+            fetch("/advertising/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.status) {
+                  document.getElementById("contact_form_advertising").reset(); // Reset the form
+                  form_btn.prop("disabled", false).html(form_btn_old_msg);
+                  $(form_result_div).html(data.message).fadeIn("slow");
+                  setTimeout(function () {
+                    $(form_result_div).fadeOut("slow");
+                  }, 5000);
+                } else {
+                  document.getElementById("contact_form_advertising").reset(); // Reset the form
+                  form_btn.prop("disabled", false).html(form_btn_old_msg);
+                  $(form_result_div)
+                    .html(`<span style="color: red;">${data.message}</span>`)
+                    .fadeIn("slow");
+                  setTimeout(function () {
+                    $(form_result_div).fadeOut("slow");
+                  }, 5000);
                 }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                document.getElementById("contact_form_advertising").reset(); // Reset the form
                 form_btn.prop("disabled", false).html(form_btn_old_msg);
-                $(form_result_div).html(data.message).fadeIn("slow");
+                $(form_result_div)
+                  .html(
+                    `<span style="color: red;">There was an error sending your message. Please try again.</span>`
+                  )
+                  .fadeIn("slow");
                 setTimeout(function () {
                   $(form_result_div).fadeOut("slow");
-                }, 6000);
-              },
-            });
-          },
+                }, 5000);
+              });
+          } else {
+            form_btn.prop("disabled", false).html("Send Message");
+          }
         });
-      })(jQuery);
+
+      function showError(selector, message) {
+        const inputElement = document.querySelector(selector);
+        const errorElement = inputElement.nextElementSibling;
+        if (errorElement && errorElement.classList.contains("error-message")) {
+          errorElement.textContent = message;
+        }
+        // Add event listener to clear the error message on input change
+        inputElement.addEventListener("input", function () {
+          errorElement.textContent = "";
+        });
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function validatePhone(phone) {
+        if (!phone) {
+          return true; // Phone is optional, so return true if it's empty
+        }
+
+        const re = /^[0-9]{9,12}$/; // Regex pattern for 9 to 12 digits
+        return re.test(String(phone));
+      }
     </script>
   </body>
 

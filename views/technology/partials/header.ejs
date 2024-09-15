@@ -12,115 +12,12 @@
       <div class="nav-outer">
         <nav class="nav main-menu">
           <ul class="navigation">
-            <li class="current dropdown">
-              <a href="/technology">Home</a>
-              <ul>
-                <li class="dropdown">
-                  <a href="index.html"
-                    >Blue Layouts <span class="badge-menu">Blue</span></a
-                  >
-                  <ul>
-                    <li><a href="index.html">Home Layout 1</a></li>
-                    <li><a href="index-2.html">Home Layout 2</a></li>
-                    <li><a href="index-3.html">Home Layout 3</a></li>
-                    <li><a href="index-4.html">Home Layout 4</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="index-red.html"
-                    >Red Layouts
-                    <span class="badge-menu badge-color-red">Red</span></a
-                  >
-                  <ul>
-                    <li><a href="index-red.html">Home Layout 1</a></li>
-                    <li><a href="index-2-red.html">Home Layout 2</a></li>
-                    <li><a href="index-3-red.html">Home Layout 3</a></li>
-                    <li><a href="index-4-red.html">Home Layout 4</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="index-yellow.html"
-                    >Yellow Layouts
-                    <span class="badge-menu badge-color-yellow">Yellow</span></a
-                  >
-                  <ul>
-                    <li><a href="index-yellow.html">Home Layout 1</a></li>
-                    <li><a href="index-2-yellow.html">Home Layout 2</a></li>
-                    <li><a href="index-3-yellow.html">Home Layout 3</a></li>
-                    <li><a href="index-4-yellow.html">Home Layout 4</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="index-dark.html"
-                    >Dark Layouts
-                    <span class="badge-menu badge-color-dark">Dark</span></a
-                  >
-                  <ul>
-                    <li><a href="index-dark.html">Home Layout 1</a></li>
-                    <li><a href="index-2-dark.html">Home Layout 2</a></li>
-                    <li><a href="index-3-dark.html">Home Layout 3</a></li>
-                    <li><a href="index-4-dark.html">Home Layout 4</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="index-single.html">Single</a>
-                  <ul>
-                    <li><a href="index-single.html">Home Layout 1</a></li>
-                    <li><a href="index-2-single.html">Home Layout 2</a></li>
-                    <li><a href="index-3-single.html">Home Layout 3</a></li>
-                    <li><a href="index-4-single.html">Home Layout 4</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#">Header Styles</a>
-                  <ul>
-                    <li><a href="index.html">Header Style 1</a></li>
-                    <li><a href="index-2.html">Header Style 2</a></li>
-                    <li><a href="index-3.html">Header Style 3</a></li>
-                    <li><a href="index-4.html">Header Style 4</a></li>
-                  </ul>
-                </li>
-                <li><a href="intro.html">Intro</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#">Pages</a>
-              <ul>
-                <li><a href="page-about.html">About</a></li>
-                <li class="dropdown">
-                  <a href="#">Projects</a>
-                  <ul>
-                    <li><a href="page-projects.html">Projects List</a></li>
-                    <li>
-                      <a href="page-project-details.html">Project Details</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#">Team</a>
-                  <ul>
-                    <li><a href="page-team.html">Team List</a></li>
-                    <li><a href="page-team-details.html">Team Details</a></li>
-                  </ul>
-                </li>
-                <li><a href="page-testimonial.html">Testimonial</a></li>
-                <li><a href="page-pricing.html">Pricing</a></li>
-                <li>
-                  <a href="page-pricing-switcher.html">Pricing Switcher</a>
-                </li>
-                <li><a href="page-faq.html">FAQ</a></li>
-                <li><a href="page-404.html">Page 404</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#">Services</a>
-              <ul>
-                <li><a href="page-services.html">Services List</a></li>
-                <li><a href="page-service-details.html">Service Details</a></li>
-              </ul>
-            </li>
+          
+           
 
+            <li><a href="/technology">Home</a></li>
             <li><a href="/technology/contact">Contact</a></li>
+            <li><a href="/technology/about">About Us</a></li>
           </ul>
         </nav>
       </div>
@@ -236,3 +133,21 @@
     </div>
   </div>
 </header>
+<script>
+  // Get the current URL path (e.g., '/advertising', '/advertising/contact')
+  const currentPath = window.location.pathname;
+  
+  // Select all navigation list items
+  const navItems = document.querySelectorAll('.navigation li');
+  
+  // Loop through each list item
+  navItems.forEach(item => {
+      // Get the anchor tag inside the list item
+      const link = item.querySelector('a');
+  
+      // If the link's href matches the current path, add the 'current' class
+      if (link && link.getAttribute('href') === currentPath) {
+          item.classList.add('current');
+      }
+  });
+      </script>
