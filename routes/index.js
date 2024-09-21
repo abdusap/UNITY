@@ -1,8 +1,4 @@
 const express = require("express");
-const {
-  contact,
-  contactForm,
-} = require("../controller/user/contactController");
 const { home } = require("../controller/index");
 
 const router = express.Router();

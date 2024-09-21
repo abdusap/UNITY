@@ -36,9 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(cookieParser())
 
 // Port specified
-// const port= process.env.PORT
-const port = 8001;
-
+const port = process.env.PORT
 //  Setting view Engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views")); // Set views directory
