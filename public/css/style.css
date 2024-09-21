@@ -3681,7 +3681,7 @@ li {
 }
 
 .banner-section {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     position: relative;
     overflow: hidden
 }
@@ -21048,12 +21048,12 @@ table.tbl-shopping-cart>tfoot>tr>th {
 
 .main-footer .widgets-section {
     position: relative;
-    padding: 110px 0 65px
+    padding: 35px 0 0;
 }
 
 @media(max-width:991.98px) {
     .main-footer .widgets-section {
-        padding: 87px 0 35px
+        padding: 15px 0 0;
     }
 }
 
@@ -21290,7 +21290,7 @@ table.tbl-shopping-cart>tfoot>tr>th {
     position: relative;
     text-align: center;
     background-color: #07151d;
-    padding: 35px 15px
+    /* padding: 35px 15px */
 }
 
 .footer-bottom .copyright-text {
