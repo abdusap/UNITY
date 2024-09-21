@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const { contactFormAdvertisingTemplate } = require('../../utilities/emailTemplate');
+const { contactFormTechnologyTemplate } = require('../../utilities/emailTemplate');
 
 const contact = async (req, res, next) => {
   try {
@@ -15,27 +15,25 @@ const contactForm= async (req, res,next) => {
     if(req.body){
       const {name,email,phone, subject, message }= req.body
       // Create a Nodemailer transporter using the SendinBlue SMTP settings
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com", // Replace with SendinBlue SMTP host
-  // host: process.env.HOST, // Replace with SendinBlue SMTP host
-  port: 587,                         // SMTP port
-  secure: false,                     // Use TLS
-  auth: {
-    // user: "sapabdu@gmail.com",            // SMTP username
-     user: "61e07d001@smtp-brevo.com",            // SMTP username
-    pass: "185wGm0rfDNzOxCh"             // SMTP password or API key
-  }
-});
-
-const html = contactFormAdvertisingTemplate(name, email, phone, subject, message)
-// Create email data
-const mailOptions = {
-  from: email, // Sender email address
-  to:   "ihsanrasheed2@gmail.com", // Recipient email address
-  subject: 'Contact Form submission', // Email subject
-  // text: 'This is a test email sent from Node.js using SendinBlue SMTP.'
-  html: html
-};
+      const transporter = nodemailer.createTransport({
+        host: process.env.HOST, // Replace with SendinBlue SMTP host
+        port: process.env.SMTP_PORT,                         // SMTP port
+        secure: false,                     // Use TLS
+        auth: {
+           user: process.env.USER,            // SMTP username
+          pass: process.env.PASSWORD            // SMTP password or API key
+        }
+      });
+      
+      const html = contactFormTechnologyTemplate(name, email, phone, subject, message)
+      // Create email data
+      const mailOptions = {
+        from: email, // Sender email address
+        to:   process.env.TECHNOLOGY_TO , // Recipient email address
+        subject: 'Contact Form submission', // Email subject
+        // text: 'This is a test email sent from Node.js using SendinBlue SMTP.'
+        html: html
+      };
 
 // Send the email
 transporter.sendMail(mailOptions, (error, info) => {

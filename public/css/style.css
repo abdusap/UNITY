@@ -565,6 +565,10 @@ img {
     height: auto
 }
 
+.error_img {
+    height: 210px!important;
+}
+
 ul,
 li {
     list-style: none;
@@ -693,7 +697,7 @@ li {
     top: 50%;
     height: 200px;
     width: 200px;
-    margin-left: -70px;
+    margin-left: -100px;
     margin-top: -80px;
     background-position: center center;
     background-repeat: no-repeat;
