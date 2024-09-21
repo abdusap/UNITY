@@ -9,6 +9,6 @@ const router = express.Router();
 
 router.get("/", home);
 router.use("/advertising", require("./advertising"));
-router.use("/technology", require("./technology"));
+router.use("/technologies", require("./technology"));
 
 module.exports = router;
